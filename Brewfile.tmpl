@@ -1,0 +1,143 @@
+# config
+cask_args appdir: '/Applications'
+
+
+# taps
+
+tap "homebrew/bundle"
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/services"
+tap "cjbassi/ytop"
+
+# packages
+brew "git"
+brew "openjdk"
+brew "coreutils"
+brew "cask"
+brew "chezmoi"
+brew "fish"
+brew "gawk"
+brew "gnu-sed"
+brew "go"
+brew "jq"
+brew "make"
+brew "neofetch"
+brew "nmap"
+brew "socat"
+brew "ripgrep"
+brew "starship"
+brew "tldr"
+brew "viddy"
+brew "watch"
+brew "yq"
+brew "cjbassi/ytop/ytop"
+
+# casks
+cask "font-fira-code"
+cask "font-fira-code-nerd-font"
+cask "font-hack-nerd-font"
+cask "obsidian"
+cask "vlc"
+cask "visual-studio-code"
+
+# vscode
+vscode "adamhartford.vscode-base64"
+vscode "alfnielsen.vsc-rename-files"
+vscode "casualjim.gotemplate"
+vscode "christian-kohler.path-intellisense"
+vscode "coolbear.systemd-unit-file"
+vscode "EditorConfig.EditorConfig"
+vscode "foxundermoon.shell-format"
+vscode "GitHub.copilot"
+vscode "GitHub.copilot-chat"
+vscode "GitHub.github-vscode-theme"
+vscode "golang.go"
+vscode "Gruntfuggly.todo-tree"
+vscode "janisdd.vscode-edit-csv"
+vscode "JHeilingbrunner.vscode-gnupg-tool"
+vscode "mcagampan.dark-horizon"
+vscode "mdickin.markdown-shortcuts"
+vscode "mechatroner.rainbow-csv"
+vscode "mhutchie.git-graph"
+vscode "michelemelluso.gitignore"
+vscode "mikestead.dotenv"
+vscode "ms-azuretools.vscode-docker"
+vscode "ms-kubernetes-tools.vscode-kubernetes-tools"
+vscode "ms-python.black-formatter"
+vscode "ms-python.isort"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-vscode-remote.remote-containers"
+vscode "ms-vscode-remote.remote-ssh"
+vscode "ms-vscode-remote.remote-ssh-edit"
+vscode "ms-vscode-remote.remote-wsl"
+vscode "ms-vscode-remote.vscode-remote-extensionpack"
+vscode "ms-vscode.azure-account"
+vscode "ms-vscode.remote-explorer"
+vscode "ms-vscode.remote-server"
+vscode "ms-vsliveshare.vsliveshare"
+vscode "PKief.material-icon-theme"
+vscode "rangav.vscode-thunder-client"
+vscode "redhat.vscode-yaml"
+vscode "run-at-scale.terraform-doc-snippets"
+vscode "ryu1kn.partial-diff"
+vscode "samuelcolvin.jinjahtml"
+vscode "sgryjp.vscode-stable-sort"
+vscode "streetsidesoftware.code-spell-checker"
+vscode "Tim-Koehler.helm-intellisense"
+vscode "timonwong.shellcheck"
+vscode "Tyriar.sort-lines"
+vscode "upboundio.upbound"
+vscode "weaveworks.vscode-gitops-tools"
+vscode "yy0931.save-as-root"
+vscode "yzane.markdown-pdf"
+vscode "yzhang.markdown-all-in-one"
+vscode "zamerick.vscode-caddyfile-syntax"
+
+
+{{- if eq .location "work" }}
+# taps
+tap "aquasecurity/trivy"
+tap "fluxcd/tap"
+tap "hashicorp/tap"
+tap "robusta-dev/krr"
+
+# packages
+brew "pre-commit"
+brew "tfenv"
+brew "awscli"
+brew "azure-cli"
+brew "argocd"
+brew "checkov"
+brew "cilium-cli"
+brew "dive"
+brew "dog"
+brew "k9s"
+brew "kind"
+brew "kubernetes-cli"
+brew "kubectx"
+brew "kubie"
+brew "mimirtool"
+brew "nvm"
+brew "vault"
+brew "aquasecurity/trivy/trivy"
+brew "fluxcd/tap/flux"
+
+
+# casks
+cask "apache-directory-studio"
+cask "keepassxc"
+cask "meld"
+cask "postman"
+
+{{- end }}
+
+# Install these on only on home
+{{- if eq .location "home" }}
+# packages
+# casks
+cask "steam"
+{{- end }}
+
