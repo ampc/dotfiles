@@ -1,0 +1,31 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+command_timeout = 5000
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[kubernetes]
+format = 'on [☸️  $context \($namespace\)](blue) '
+disabled = false
+[kubernetes.context_aliases]
+"arn:aws:eks:.*:*:cluster/(?P<cluster>[\\w-]+)" = "aws-$cluster"
+
+[time]
+disabled = false
+format = '🕙[\[ $time \]]($style) '
+time_format = "%T"
+
+[python]
+disabled = true
+
+[azure]
+disabled = false
+format = '[$symbol($subscription)]($style) '
+symbol = ' ☁️  '
+style = 'blue bold'
+
