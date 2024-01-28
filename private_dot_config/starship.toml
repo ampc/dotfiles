@@ -15,6 +15,7 @@ disabled = false
 [kubernetes.context_aliases]
 "arn:aws:eks:.*:*:cluster/(?P<cluster>[\\w-]+)" = "aws-$cluster"
 
+
 [time]
 disabled = false
 format = '🕙[\[ $time \]]($style) '
