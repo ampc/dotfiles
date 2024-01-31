@@ -10,11 +10,16 @@ success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being
 disabled = true
 
 [kubernetes]
-format = 'on [☸️  $context \($namespace\)](blue) '
 disabled = false
-[kubernetes.context_aliases]
-"arn:aws:eks:.*:*:cluster/(?P<cluster>[\\w-]+)" = "aws-$cluster"
+symbol = "☸️  🟢  "
+style = "bold fg:28"
+contexts = [
+  { context_pattern = ".*preprd.*", style = "bold fg:208", symbol = "☸️  ⚠️  " },
+  { context_pattern = ".*prd.*", style = "bold fg:160", symbol = "☸️  🚨 " }
+]
 
+#[kubernetes.context_aliases]
+#"arn:aws:eks:.*:*:cluster/(?P<cluster>[\\w-]+)" = "aws-$cluster"
 
 [time]
 disabled = false
