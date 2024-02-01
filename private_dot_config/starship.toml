@@ -11,7 +11,7 @@ disabled = true
 
 [kubernetes]
 disabled = false
-symbol = "☸️  🟢  "
+symbol = "☸️  🟢 "
 style = "bold fg:28"
 contexts = [
   { context_pattern = ".*preprd.*", style = "bold fg:208", symbol = "☸️  ⚠️  " },
