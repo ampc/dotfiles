@@ -22,13 +22,13 @@ contexts = [
 [custom.vpn_ctw]
 description = 'Show VPN status'
 when = 'scutil --nc status "VPN" | grep -q "criticaltechworks"'
-symbol = '🌐 CTW VPN'
+symbol = '🌐 CTW VPN '
 
 [custom.vpn_tailscale]
 format ='[$symbol ]($style)Tailscale VPN'
 description = 'Show VPN status'
 when = 'scutil --nc status "VPN" | grep -q "tailscale"'
-symbol = '🌐 Tailscale VPN'
+symbol = '🌐 Tailscale VPN '
 
 #[kubernetes.context_aliases]
 #"arn:aws:eks:.*:*:cluster/(?P<cluster>[\\w-]+)" = "aws-$cluster"
