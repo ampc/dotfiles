@@ -1,4 +1,36 @@
 plugins:
+  watch-events:
+    shortCut: Shift-E
+    confirm: false
+    description: Get Events
+    scopes:
+    - all
+    command: sh
+    background: false
+    args:
+    - -c
+    - "watch -n 5 kubectl get events --context $CONTEXT --namespace $NAMESPACE --field-selector involvedObject.name=$NAME"
+  dive:
+    shortCut: d
+    confirm: false
+    description: "Dive image"
+    scopes:
+      - containers
+    command: dive
+    background: false
+    args:
+      - $COL-IMAGE
+  blame:
+    shortCut: b
+    confirm: false
+    description: "Blame"
+    scopes:
+      - all
+    command: sh
+    background: false
+    args:
+      - -c
+      - "kubectl-blame $RESOURCE_NAME $NAME -n $NAMESPACE --context $CONTEXT | less"
   toggle-helmrelease:
     shortCut: Shift-T
     confirm: true
